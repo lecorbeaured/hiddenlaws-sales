@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hidden Laws of Money — Eric Coste</title>
+<meta name="description" content="You're not broke because you're lazy. You're broke because nobody told you the real rules. The Hidden Laws of Money by Eric Coste reveals the 10 unspoken patterns that quietly decide who builds wealth and who stays stuck.">
+<meta name="keywords" content="personal finance book, wealth building, money mindset, financial freedom, Eric Coste, hidden laws of money">
+<meta property="og:title" content="The Hidden Laws of Money — Eric Coste">
+<meta property="og:description" content="10 laws that quietly decide who wins and who stays broke. Nobody taught you these. It's time to learn them.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://payhip.com/ericcoste">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0a0a08;
+    --parchment: #f2ead8;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --rust: #8b3a1f;
+    --cream: #faf6ee;
+    --muted: #6b6355;
+    --rule: rgba(201,168,76,0.25);
+    --serif: 'Playfair Display', Georgia, serif;
+    --body: 'Lora', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* MASTHEAD */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    text-align: center;
+  }
+  .masthead-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-kicker::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 120px;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(42px, 8vw, 76px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--parchment);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .hero-lede {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--parchment);
+    max-width: 640px;
+    margin-bottom: 48px;
+    opacity: 0.9;
+  }
+  .hero-lede strong { color: var(--gold-light); font-weight: 500; }
+
+  .cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-primary .arrow { font-size: 16px; }
+  .cta-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .price-pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    border: 1px solid var(--rule);
+    padding: 4px 12px;
+    letter-spacing: 0.1em;
+  }
+
+  /* RULING LINE SECTION */
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 48px 0 32px;
+  }
+  .section-rule-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-rule-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* PAIN BLOCK */
+  .pain-block {
+    padding: 0 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pain-graf {
+    font-size: 19px;
+    line-height: 1.85;
+    color: var(--parchment);
+    margin-bottom: 24px;
+    opacity: 0.88;
+  }
+  .pain-graf strong { color: var(--cream); font-style: italic; font-weight: 400; }
+
+  .callout-box {
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    margin: 40px 0;
+    background: rgba(201,168,76,0.05);
+  }
+  .callout-box p {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--parchment);
+  }
+
+  /* WHAT THIS IS NOT */
+  .not-list {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .not-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 8px;
+  }
+  .not-item {
+    background: var(--ink);
+    padding: 20px;
+  }
+  .not-item-x {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--rust);
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+  }
+  .not-item-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* LAWS SECTION */
+  .laws-section {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .laws-intro {
+    font-size: 18px;
+    color: var(--parchment);
+    opacity: 0.85;
+    margin-bottom: 40px;
+    max-width: 620px;
+    line-height: 1.8;
+  }
+  .law-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .law-item:last-child { border-bottom: none; }
+  .law-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    min-width: 48px;
+    padding-top: 3px;
+  }
+  .law-content {}
+  .law-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 4px;
+  }
+  .law-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* PULL QUOTES */
+  .pull-quote {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .pull-quote-text {
+    font-family: var(--serif);
+    font-size: clamp(22px, 4vw, 36px);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--parchment);
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .pull-quote-attr {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* WHO THIS IS FOR */
+  .for-section {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .for-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 8px;
+  }
+  @media(max-width: 560px) { .for-grid { grid-template-columns: 1fr; } }
+  .for-col-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .for-col-label.yes { color: var(--gold); }
+  .for-col-label.no { color: var(--muted); }
+  .for-item {
+    font-size: 14px;
+    color: var(--parchment);
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0.85;
+    display: flex;
+    gap: 10px;
+  }
+  .for-item:last-child { border-bottom: none; }
+  .for-check { color: var(--gold); font-size: 12px; flex-shrink: 0; padding-top: 2px; }
+  .for-x { color: var(--muted); font-size: 12px; flex-shrink: 0; padding-top: 2px; }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .testi-card {
+    border: 1px solid var(--rule);
+    padding: 24px;
+    position: relative;
+  }
+  .testi-quote {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--parchment);
+    opacity: 0.9;
+    margin-bottom: 16px;
+  }
+  .testi-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+  .testi-role {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+  .testi-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 14px;
+  }
+  .star {
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /* ABOUT AUTHOR */
+  .author-section {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media(max-width: 600px) {
+    .author-section { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .author-avatar-wrap { text-align: center; }
+  .author-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-family: var(--serif);
+    font-size: 40px;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .author-name-display {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .author-bio {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--parchment);
+    opacity: 0.85;
+  }
+  .author-bio p { margin-bottom: 16px; }
+  .author-bio p:last-child { margin-bottom: 0; }
+
+  /* GUARANTEE */
+  .guarantee {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .guarantee-badge {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .guarantee-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 16px;
+  }
+  .guarantee-text {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    padding: 80px 0;
+    text-align: center;
+  }
+  .final-cta-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    color: var(--parchment);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .final-cta-title em { font-style: italic; color: var(--gold); }
+  .final-cta-sub {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-cta .cta-block { align-items: center; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 24px;
+    text-align: center;
+  }
+  footer p {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-kicker { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-subtitle { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-lede { animation: fadeUp 0.7s 0.3s ease both; }
+  .cta-block { animation: fadeUp 0.7s 0.4s ease both; }
+
+  /* FAQ */
+  .faq-section {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .faq-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--parchment);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-q .faq-icon {
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding-top: 12px;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* WHAT YOU GET */
+  .gets-section {
+    padding: 48px 0 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .gets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 8px;
+  }
+  .gets-item {
+    background: var(--ink);
+    padding: 24px 20px;
+  }
+  .gets-num {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .gets-label {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  @media(max-width: 600px) {
+    .hero { padding: 48px 0 40px; }
+    .pull-quote { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-eyebrow">Eric Coste &nbsp;·&nbsp; A book for the everyday builder</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-kicker">New release &nbsp; 2025</div>
+      <h1 class="hero-title">The Hidden<br><em>Laws</em> of Money</h1>
+      <p class="hero-subtitle">The rules that quietly decide who wins and who stays broke.</p>
+      <p class="hero-lede">
+        You are not behind because you are lazy. You are not broke because you lack discipline.
+        You are stuck because <strong>nobody ever taught you the real rules.</strong>
+        The ones that were never in a classroom. The ones the wealthy absorbed before they were old enough to question them.
+        This book is those rules. Finally written down. For you.
+      </p>
+      <div class="cta-block">
+        <a href="https://payhip.com/ericcoste" class="btn-primary">
+          Get the book now <span class="arrow">&#8594;</span>
+        </a>
+        <span class="cta-sub">Instant PDF download &nbsp;·&nbsp; <span class="price-pill">$35</span> &nbsp;·&nbsp; 30-day guarantee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain-block">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">The problem</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <p class="pain-graf">
+        You work. You try. You read the articles, watch the videos, maybe even started a budget once.
+        And at the end of the month, <strong>you are still in the same place.</strong>
+      </p>
+      <p class="pain-graf">
+        Not because you are doing something wrong. Because you were never shown the map.
+        The financial system you are navigating was not designed with you in mind.
+        It was built by people who already knew the rules, for people who already knew the rules.
+        And it runs quietly in the background of every paycheck, every credit card offer, every "limited time" deal, extracting from people who were never told what was being extracted.
+      </p>
+      <p class="pain-graf">
+        The wealthy are not smarter. They are not harder working. They are not luckier than you.
+        <strong>They just learned a different set of rules.</strong>
+        Most of them before they were twelve years old.
+      </p>
+
+      <div class="callout-box">
+        <p>"The gap between people who build wealth and people who don't is almost never about intelligence, talent, or deserve. It is about awareness. About knowing the rules of a game that most people play blind."</p>
+      </div>
+
+      <p class="pain-graf">
+        This book is not about cutting your lattes. It is not about opening a Roth IRA and calling it a strategy.
+        It is about the ten invisible forces that have been shaping your financial life since before you had one, and what changes the moment you can finally see them.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS NOT -->
+  <section class="not-list">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">What this is not</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <div class="not-grid">
+        <div class="not-item">
+          <div class="not-item-x">&#10005; &nbsp;Not this</div>
+          <div class="not-item-text">Another budget worksheet dressed up as a revelation</div>
+        </div>
+        <div class="not-item">
+          <div class="not-item-x">&#10005; &nbsp;Not this</div>
+          <div class="not-item-text">Get-rich-quick advice written for people who already have capital</div>
+        </div>
+        <div class="not-item">
+          <div class="not-item-x">&#10005; &nbsp;Not this</div>
+          <div class="not-item-text">Hustle culture propaganda that tells you to sleep less</div>
+        </div>
+        <div class="not-item">
+          <div class="not-item-x">&#10005; &nbsp;Not this</div>
+          <div class="not-item-text">Condescending advice that assumes you just need more discipline</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LAWS -->
+  <section class="laws-section">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">Inside the book</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <p class="laws-intro">
+        Ten laws. Ten patterns operating quietly beneath the surface of every financial decision you have ever made. Here is what you are about to learn.
+      </p>
+
+      <div class="law-item">
+        <div class="law-num">LAW 01</div>
+        <div class="law-content">
+          <div class="law-title">The Identity Law</div>
+          <div class="law-desc">You cannot outperform your money self-image. Until the internal ceiling rises, the bank account won't either.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 02</div>
+        <div class="law-content">
+          <div class="law-title">The Proximity Law</div>
+          <div class="law-desc">Your net worth is an average of the five people closest to you. Environment is not background. It is strategy.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 03</div>
+        <div class="law-content">
+          <div class="law-title">The Velocity Law</div>
+          <div class="law-desc">It is not what you make. It is what happens to money after it arrives. Idle money is dying money.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 04</div>
+        <div class="law-content">
+          <div class="law-title">The Asymmetry Law</div>
+          <div class="law-desc">Risk the few. Protect the most. Asymmetric bets, not balanced portfolios, are how ordinary people build extraordinary outcomes.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 05</div>
+        <div class="law-content">
+          <div class="law-title">The Leverage Law</div>
+          <div class="law-desc">The wealthy trade their time once, then collect forever. Systems, content, and capital earn when you are not in the room.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 06</div>
+        <div class="law-content">
+          <div class="law-title">The Perception Law</div>
+          <div class="law-desc">Money flows toward confidence, not competence. The market pays for what it can clearly see, not what you actually know.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 07</div>
+        <div class="law-content">
+          <div class="law-title">The Compounding Law</div>
+          <div class="law-desc">Impatience is the most expensive habit most people have. Everything that matters in your financial life compounds, or doesn't, based on whether you stay.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 08</div>
+        <div class="law-content">
+          <div class="law-title">The Scarcity Tax</div>
+          <div class="law-desc">Being broke is not a neutral state. It is actively expensive. Financial stress consumes the cognitive bandwidth needed to escape it.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 09</div>
+        <div class="law-content">
+          <div class="law-title">The Creation Law</div>
+          <div class="law-desc">Wealth is built, not found. Producers win. Consumers pay. The ratio of what you create to what you consume is one of the most accurate predictors of your financial future.</div>
+        </div>
+      </div>
+      <div class="law-item">
+        <div class="law-num">LAW 10</div>
+        <div class="law-content">
+          <div class="law-title">The Game You Didn't Know Was Being Played</div>
+          <div class="law-desc">The opening law that changes everything. Once you see the board, you cannot unsee it. And that shift is worth more than any strategy in any other book.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull-quote">
+    <div class="container">
+      <p class="pull-quote-text">"The best person for the job rarely gets it. The most skilled service provider rarely gets the client. The most deserving entrepreneur rarely gets the investment. This book explains why, and what to do about it."</p>
+      <div class="pull-quote-attr">From Chapter 7: The Perception Law</div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="gets-section">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">What you get</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <div class="gets-grid">
+        <div class="gets-item">
+          <span class="gets-num">10</span>
+          <div class="gets-label">Hidden financial laws explained clearly and completely</div>
+        </div>
+        <div class="gets-item">
+          <span class="gets-num">230+</span>
+          <div class="gets-label">Pages written for everyday builders, not finance professionals</div>
+        </div>
+        <div class="gets-item">
+          <span class="gets-num">3</span>
+          <div class="gets-label">Real human stories: Tyson, Singleton, Smokey Robinson</div>
+        </div>
+        <div class="gets-item">
+          <span class="gets-num">PDF</span>
+          <div class="gets-label">Instant download, read on any device, yours to keep forever</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="for-section">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">Is this for you</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <div class="for-grid">
+        <div>
+          <div class="for-col-label yes">This is for you if</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You earn decent money but have nothing to show for it at month's end</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You are the first in your family trying to build real wealth</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You have tried budgeting apps, savings plans, and finance books and still feel stuck</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You suspect the system was not designed with you in mind</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You have a side hustle or business idea and want to understand the real game before you play it</div>
+          <div class="for-item"><span class="for-check">&#10003;</span> You want to understand money, not just manage it</div>
+        </div>
+        <div>
+          <div class="for-col-label no">This is not for you if</div>
+          <div class="for-item"><span class="for-x">&#8212;</span> You are looking for stock tips or investment product recommendations</div>
+          <div class="for-item"><span class="for-x">&#8212;</span> You want a 5-step formula with no inner work attached</div>
+          <div class="for-item"><span class="for-x">&#8212;</span> You believe your financial situation is entirely someone else's fault and want it confirmed</div>
+          <div class="for-item"><span class="for-x">&#8212;</span> You are already financially free and looking to optimize at the margins</div>
+          <div class="for-item"><span class="for-x">&#8212;</span> You want comfort over clarity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container-wide">
+      <div class="container" style="padding-bottom: 0;">
+        <div class="section-rule">
+          <span class="section-rule-label">Readers</span>
+          <span class="section-rule-line"></span>
+        </div>
+      </div>
+      <div style="padding: 0 24px;">
+        <div class="testi-grid">
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"I've read Rich Dad Poor Dad twice. I thought I understood money. This book showed me what I was still missing. The scarcity tax chapter alone was worth ten times the price."</div>
+            <div class="testi-name">Marcus T.</div>
+            <div class="testi-role">Logistics manager, Detroit MI</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"I kept waiting for it to tell me to cut subscriptions. It never did. It went somewhere completely different. My relationship with money shifted after Chapter 2 and it hasn't gone back."</div>
+            <div class="testi-name">Simone A.</div>
+            <div class="testi-role">Registered nurse and side business owner, Houston TX</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"The Leverage Law chapter is something I wish I read at 22. I've been grinding for ten years and this reframed everything I thought I knew about what hard work is actually supposed to build."</div>
+            <div class="testi-name">Deon W.</div>
+            <div class="testi-role">Construction business owner, Atlanta GA</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"This is the book I wanted to give my son but couldn't find. I read it first, cover to cover in two sittings. Then I bought a second copy for him. That tells you everything."</div>
+            <div class="testi-name">Patricia N.</div>
+            <div class="testi-role">High school teacher and single mother, Memphis TN</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"I make good money and I still felt like this book was written for me. The identity chapter hit like cold water. I didn't know I had a ceiling until I read it."</div>
+            <div class="testi-name">Ray M.</div>
+            <div class="testi-role">Software engineer and real estate investor, Charlotte NC</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+            <div class="testi-quote">"No fluff. No padding. Every chapter earns its place and ends with a line that stays with you. The kind of book you highlight so much it turns gold."</div>
+            <div class="testi-name">Keisha B.</div>
+            <div class="testi-role">Marketing consultant and digital product creator, Philadelphia PA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section>
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">About the author</span>
+        <span class="section-rule-line"></span>
+      </div>
+      <div class="author-section" style="padding-top: 0;">
+        <div class="author-avatar-wrap">
+          <div class="author-avatar">E</div>
+          <div class="author-name-display">Eric Coste</div>
+        </div>
+        <div class="author-bio">
+          <p>Eric Coste writes about money, mindset, and the invisible systems that shape both. He is not a Wall Street veteran or a trust fund economist. He is someone who spent years studying the gap between people who build wealth and people who work hard and still can't seem to get ahead, and found that the gap had almost nothing to do with intelligence, talent, or effort.</p>
+          <p>His work is for the everyday builder: the person who is ready to stop playing a game they never fully understood and start learning the real rules.</p>
+          <p>The Hidden Laws of Money is his most direct work to date. No jargon. No condescension. Just the framework he wishes someone had handed him before he needed it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-rule">
+        <span class="section-rule-label">Common questions</span>
+        <span class="section-rule-line"></span>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is this just another "mindset" book that doesn't give me anything practical? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No. The Hidden Laws of Money addresses mindset where mindset is genuinely the blocker, and mechanics where mechanics are the issue. You will leave with frameworks for velocity, leverage, asymmetric risk, and pricing that you can apply immediately. The book is practical precisely because it treats the psychological and the mechanical as connected, not separate.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I don't have a lot of money to invest. Is this still for me? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Especially for you. The laws in this book scale down to any income level. The Velocity Law chapter specifically addresses how to apply velocity thinking starting with fifty dollars. The Scarcity Tax chapter is written directly for people navigating genuine financial pressure. This book does not assume you already have resources. It helps you build from wherever you actually are.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from Rich Dad Poor Dad or other financial classics? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Rich Dad Poor Dad introduced the idea of assets vs. liabilities and changed how a generation thought about money. This book goes deeper into the psychological, behavioral, and structural layers that determine whether you actually apply that knowledge or continue to undermine it. It also goes further into leverage, perception, compounding, and the scarcity tax in ways those books do not cover. Think of it as the book that explains why the advice in those books didn't fully stick.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What format is the book and how do I get it? <span class="faq-icon">+</span></div>
+        <div class="faq-a">The book is delivered as a PDF immediately after purchase. You can read it on your phone, tablet, laptop, or print it. There is no waiting, no shipping, and no DRM. It is yours to keep, highlight, and return to as many times as you want.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I read it and it doesn't help me? <span class="faq-icon">+</span></div>
+        <div class="faq-a">There is a 30-day money-back guarantee. If you read the book and genuinely feel it delivered no value, send an email and you will receive a full refund. No interrogation. No hoops. The confidence behind that offer is the same confidence behind writing the book in the first place.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="container">
+      <div class="guarantee-badge">30 day<br>guarantee</div>
+      <h2 class="guarantee-title">Read it. If it doesn't shift something, get your money back.</h2>
+      <p class="guarantee-text">A 30-day full refund guarantee, no questions asked. Because a book that changes the way you think about money should be able to prove itself. If it doesn't, the $35 comes back to you. Simple.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="final-cta-title">The rules were always<br>being played.<br><em>Now you know them.</em></h2>
+      <p class="final-cta-sub">The Hidden Laws of Money. 10 chapters. One shift in how you see every financial decision you will ever make.</p>
+      <div class="cta-block">
+        <a href="https://payhip.com/ericcoste" class="btn-primary">
+          Get instant access &nbsp; &#8594;
+        </a>
+        <span class="cta-sub">PDF download &nbsp;·&nbsp; <span class="price-pill">$35</span> &nbsp;·&nbsp; 30-day money-back guarantee</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Eric Coste &nbsp;·&nbsp; payhip.com/ericcoste &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
