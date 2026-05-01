@@ -786,6 +786,9 @@ window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
   r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
 pintrk('load', '2612753114490');
 pintrk('page');
+pintrk('track', 'pagevisit', {
+  event_id: 'pagevisit_' + Date.now()
+});
 </script>
 <noscript>
 <img height="1" width="1" style="display:none;" alt=""
@@ -817,7 +820,7 @@ pintrk('page');
         This book is those rules. Finally written down. For you.
       </p>
       <div class="cta-block">
-        <a href="https://payhip.com/b/DzR2a" class="btn-primary">
+        <a href="https://payhip.com/b/DzR2a" class="btn-primary" onclick="pintrk('track', 'checkout', {value: 35, order_quantity: 1, currency: 'USD', event_id: 'checkout_' + Date.now()})">
           Get the book now <span class="arrow">&#8594;</span>
         </a>
         <span class="cta-sub">Instant PDF download &nbsp;·&nbsp; <span class="price-pill">$35</span> &nbsp;·&nbsp; 30-day guarantee</span>
@@ -1155,7 +1158,7 @@ pintrk('page');
       <h2 class="final-cta-title">The rules were always<br>being played.<br><em>Now you know them.</em></h2>
       <p class="final-cta-sub">The Hidden Laws of Money. 10 chapters. One shift in how you see every financial decision you will ever make.</p>
       <div class="cta-block">
-        <a href="https://payhip.com/b/DzR2a" class="btn-primary">
+        <a href="https://payhip.com/b/DzR2a" class="btn-primary" onclick="pintrk('track', 'checkout', {value: 35, order_quantity: 1, currency: 'USD', event_id: 'checkout_' + Date.now()})">
           Get instant access &nbsp; &#8594;
         </a>
         <span class="cta-sub">PDF download &nbsp;·&nbsp; <span class="price-pill">$35</span> &nbsp;·&nbsp; 30-day money-back guarantee</span>
